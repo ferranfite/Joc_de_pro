@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1atrvsgvsfe5"
-path="res://.godot/imported/cotxe.webp-b4224a6cb0e2df047bfd7d9daaa70b31.ctex"
+uid="uid://cpsvxihfxtfe1"
+path="res://.godot/imported/circuit.jpg-1d05e92ccf3eed3c084aa95f90bb3298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Joc_de_pro/cotxe.webp"
-dest_files=["res://.godot/imported/cotxe.webp-b4224a6cb0e2df047bfd7d9daaa70b31.ctex"]
+source_file="res://Joc_de_pro/imatges/circuit.jpg"
+dest_files=["res://.godot/imported/circuit.jpg-1d05e92ccf3eed3c084aa95f90bb3298.ctex"]
 
 [params]
 

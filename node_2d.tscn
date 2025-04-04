@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc0cbsxhj76ii"]
+
+[ext_resource type="Texture2D" uid="uid://cpsvxihfxtfe1" path="res://Joc_de_pro/imatges/circuit.jpg" id="1_wnlu5"]
+[ext_resource type="Script" uid="uid://dt1rjirlmntpq" path="res://Joc_de_pro/character_body_2d.gd" id="2_83ktr"]
+[ext_resource type="Texture2D" uid="uid://c1atrvsgvsfe5" path="res://Joc_de_pro/imatges/cotxe.webp" id="2_tfcg1"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_83ktr"]
+a = Vector2(-828, 0)
+b = Vector2(-5, 4)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovtsk"]
+radius = 21.0
+height = 76.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Circuit" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(582.448, 324.714)
+rotation = 1.5708
+scale = Vector2(2.75539, 2.44274)
+texture = ExtResource("1_wnlu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1002, 542)
+shape = SubResource("SegmentShape2D_83ktr")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(864, 584)
+rotation = -3.14159
+scale = Vector2(0.64, 0.68)
+script = ExtResource("2_83ktr")
+
+[node name="Cotxe" type="Sprite2D" parent="CharacterBody2D"]
+rotation = -6.28319
+scale = Vector2(0.203451, 0.238844)
+texture = ExtResource("2_tfcg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ovtsk")
