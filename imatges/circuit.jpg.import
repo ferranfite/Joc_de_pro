@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpsvxihfxtfe1"
-path="res://.godot/imported/circuit.jpg-1d05e92ccf3eed3c084aa95f90bb3298.ctex"
+path="res://.godot/imported/circuit.jpg-efb2eb364bbd515af0f4830ab9138799.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Joc_de_pro/imatges/circuit.jpg"
-dest_files=["res://.godot/imported/circuit.jpg-1d05e92ccf3eed3c084aa95f90bb3298.ctex"]
+source_file="res://imatges/circuit.jpg"
+dest_files=["res://.godot/imported/circuit.jpg-efb2eb364bbd515af0f4830ab9138799.ctex"]
 
 [params]
 
