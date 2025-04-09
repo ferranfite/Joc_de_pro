@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dc0cbsxhj76ii"]
+[gd_scene load_steps=29 format=3 uid="uid://dc0cbsxhj76ii"]
 
 [ext_resource type="Texture2D" uid="uid://cpsvxihfxtfe1" path="res://imatges/circuit.jpg" id="1_wnlu5"]
 [ext_resource type="Script" uid="uid://dt1rjirlmntpq" path="res://character_body_2d.gd" id="2_83ktr"]
@@ -96,6 +96,10 @@ b = Vector2(1063, 476)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovtsk"]
 radius = 21.0
 height = 76.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2nhjh"]
+a = Vector2(-20, 37)
+b = Vector2(-20, 129)
 
 [node name="Node2D" type="Node2D"]
 
@@ -297,7 +301,21 @@ shape = SubResource("SegmentShape2D_ei405")
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_e8dv2")
 
-[node name="Meta" type="Sprite2D" parent="."]
+[node name="velocitat" type="Label" parent="StaticBody2D"]
+offset_left = 305.0
+offset_top = 233.0
+offset_right = 392.0
+offset_bottom = 282.0
+text = "vel."
+
+[node name="VoltesLabel" type="Label" parent="StaticBody2D"]
+offset_left = 305.0
+offset_top = 275.0
+offset_right = 409.0
+offset_bottom = 333.0
+text = "Voltes: 0"
+
+[node name="Meta" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(821, 583.605)
 rotation = 1.5708
 scale = Vector2(0.163531, 0.182334)
@@ -310,10 +328,20 @@ scale = Vector2(0.64, 0.68)
 script = ExtResource("2_83ktr")
 
 [node name="Cotxe" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(126.563, 4.41146)
 rotation = -6.28319
 scale = Vector2(0.203451, 0.238844)
 texture = ExtResource("2_tfcg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(121.875, 2.94089)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ovtsk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(834, 501)
+shape = SubResource("SegmentShape2D_2nhjh")
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
