@@ -1,17 +1,18 @@
 extends CharacterBody2D
-var velocitat :float= 100
+var velocitat :float= 0
 var direccio : Vector2 = Vector2.LEFT
-var gas := 150
-var fre = 300
+var gas := 200
+var fre = 400
 var voltes = 0
+
 
 
 	
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("dreta"):
-		direccio = direccio.rotated(0.03)
+		direccio = direccio.rotated(0.035)
 	if Input.is_action_pressed("esquerra"):
-		direccio = direccio.rotated(-0.03)
+		direccio = direccio.rotated(-0.035)
 	if Input.is_action_pressed("accelera"):
 		velocitat += gas*delta
 	if Input.is_action_pressed("frena"):
@@ -25,8 +26,8 @@ func _process(delta: float) -> void:
 	velocity = direccio * velocitat
 	move_and_slide()
 	rotation = direccio.angle()
-	print(velocitat)
-	get_node("/root/Node2D/StaticBody2D/velocitat").text = "Velocitat: " + str(velocitat)
+	print(velocitat/2)
+	get_node("/root/Node2D/StaticBody2D/velocitat").text = "Velocitat: " + str(int(velocitat/2))
 	
 
 
